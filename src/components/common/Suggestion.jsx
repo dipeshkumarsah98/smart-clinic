@@ -1,9 +1,9 @@
 import React from "react";
 
-const Suggestion = () => {
+const Suggestion = ({ isHealthy }) => {
   return (
     <div className="bg-white px-5 py-4 font-merienda rounded-lg shadow-xl border border-gary-2 ">
-      <h1>Recomendation</h1>
+      <h1>Recomendation {!isHealthy && "for better health"} </h1>
       <ol className="space-y-2 list-disc text-justify">
         <li>
           Monitor blood sugar levels regularly and keep track of the results.

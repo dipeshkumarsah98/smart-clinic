@@ -19,7 +19,7 @@ const SideBar = () => {
       <hr />
       <ul className="nav nav-pills flex-column mb-auto">
         <li className="nav-item">
-          <Link to={"/home"} className="nav-link active" aria-current="page">
+          <Link to={"/"} className="nav-link" aria-current="page">
             <i class="fa-solid fa-house mr-2"></i>
             Home
           </Link>
@@ -37,17 +37,17 @@ const SideBar = () => {
           <div className="collapse" id="dashboard-collapse">
             <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small ml-7">
               <li>
-                <Link to="orders" className="nav-link text-white">
+                <Link to="/" className="nav-link text-white">
                   Blood Report
                 </Link>
               </li>
               <li>
-                <Link to="products" className="nav-link text-white">
+                <Link to="/" className="nav-link text-white">
                   Urin Report
                 </Link>
               </li>
               <li>
-                <Link to="order" className="nav-link text-white">
+                <Link to="/" className="nav-link text-white">
                   Stool Report
                 </Link>
               </li>
@@ -55,7 +55,7 @@ const SideBar = () => {
           </div>
         </li>
         <li>
-          <Link to="orders" className="nav-link text-white">
+          <Link to="heart" className="nav-link text-white">
             <i class="fa-solid fa-heart-pulse mr-2"></i>
             Heart Report
           </Link>
@@ -64,12 +64,6 @@ const SideBar = () => {
           <Link to="diabetes" className="nav-link text-white">
             <i class="fa-solid fa-cubes-stacked mr-2"></i>
             diabetes Status
-          </Link>
-        </li>
-        <li>
-          <Link to="order" className="nav-link text-white">
-            <i class="fa-solid fa-compress mr-2"></i>
-            Pressure Level
           </Link>
         </li>
       </ul>

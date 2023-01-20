@@ -1,20 +1,22 @@
 import axios from "axios";
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Logo from "../../img/bg-green-logo.png";
 
-const SignIn = () => {
+const SignIn = ({ handleLog }) => {
   const { name } = useParams("name");
-
+  const navigate = useNavigate();
   const handleLogin = async (e) => {
     e.preventDefault();
-    const data = { phone: 984983222, password: "password2" };
+    const data = { phone: e.target[0].value, password: e.target[1].value };
     if (name === "lab") {
       let url = "http://192.168.1.94:8000/api/lab_assistant/login";
       try {
         const obj = await axios.post(url, data);
         console.log(obj);
       } catch (error) {
+        handleLog();
+        navigate("/");
         console.log(error);
       }
     }
@@ -24,6 +26,8 @@ const SignIn = () => {
         const obj = await axios.post(url, data);
         console.log(obj);
       } catch (error) {
+        navigate("/");
+        handleLog();
         console.log(error);
       }
     }
@@ -47,11 +51,11 @@ const SignIn = () => {
           Login as {name === "lab" ? "lab assistant" : "Patient"}
         </h1>
         <div className="flex flex-col ">
-          <label htmlFor="username">Username</label>
+          <label htmlFor="username">Phone</label>
           <input
             type="text"
-            name="username"
-            id="username"
+            name="phone"
+            id="phone"
             className="border border-blue-500 h-8 px-2"
           />
         </div>

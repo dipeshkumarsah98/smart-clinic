@@ -1,6 +1,6 @@
 import React from "react";
 
-const UserDetail = () => {
+const UserDetail = ({ healthStatus }) => {
   return (
     <div className="my-5 border border-gray-300 px-16 py-10 bg-stone-100 rounded-xl shadow-lg">
       <div>
@@ -24,12 +24,19 @@ const UserDetail = () => {
         <h3 className="flex items-center font-merienda text-rose-500">
           Health Status <i class="fa-solid fa-caret-down ml-3"></i>
         </h3>
-        <p className="text-green-600 flex items-center font-raleway  ">
-          <i class="fa-regular fa-face-smile mr-3 text-3xl"></i>Lorem ipsum
-          dolor sit amet consectetur adipisicing elit. Excepturi quisquam
-          repudiandae ipsum corporis repellendus dolores ratione. Temporibus
-          dignissimos inventore reprehenderit.S
-        </p>
+        {healthStatus.isHealthy ? (
+          <p className="text-green-600 flex items-center font-raleway  ">
+            <i class="fa-regular fa-face-smile mr-3 text-3xl"></i>Lorem ipsum
+            dolor sit amet consectetur adipisicing elit. Excepturi quisquam
+            repudiandae ipsum corporis repellendus dolores ratione. Temporibus
+            dignissimos inventore reprehenderit.S
+          </p>
+        ) : (
+          <p className="text-red-500">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero,
+            soluta!
+          </p>
+        )}
       </div>
     </div>
   );
