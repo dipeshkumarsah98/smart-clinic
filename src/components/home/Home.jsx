@@ -7,7 +7,7 @@ const Home = () => {
     <div className="container-fluid ">
       <div className="row">
         <SideBar />
-        <div className="col-10 bg-[#e7e7e7]">
+        <div className="col-10 bg-[#f4f6f9]">
           <Outlet />
         </div>
       </div>

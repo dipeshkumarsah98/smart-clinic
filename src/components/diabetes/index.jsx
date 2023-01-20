@@ -1,4 +1,6 @@
+import axios from "axios";
 import React from "react";
+import { useEffect } from "react";
 import Form from "../form";
 import Input from "../input";
 
@@ -26,6 +28,33 @@ const Diabetes = () => {
     },
     { id: 7, name: "age", label: "Age", type: "number" },
   ];
+
+  useEffect(() => {
+    preditDiabetes();
+  }, []);
+
+  const preditDiabetes = async () => {
+    const data = {
+      pregnancies: 1,
+      Glucose: 85,
+      BloodPressure: 66,
+      SkinThickness: 29,
+      Insulin: 0,
+      BMI: 26.6,
+      DiabetesPedigreeFunction: 0.351,
+      Age: 31,
+    };
+    try {
+      const obj = await axios.post(
+        "http://127.0.0.1:8000/diabetes_prediction",
+        data
+      );
+      // const obj = await axios.get("http://192.168.1.94:8000/api/patients");
+      console.log(obj);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const handleSubmit = () => {};
   return (

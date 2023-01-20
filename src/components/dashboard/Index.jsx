@@ -1,16 +1,23 @@
 import React from "react";
 import BloodDetail from "../common/BloodDetail";
+import Suggestion from "../common/Suggestion";
+import Table from "../common/Table";
 import UserDetail from "../common/UserDetail";
 
 const Dashboard = () => {
   return (
-    // <div className="grid grid-cols-2 grid-flow-row gap-4 ">
     <div className="row">
       <div className="col-7">
         <UserDetail />
       </div>
       <div className="col-5 ">
         <BloodDetail />
+      </div>
+      <div className="col-8">
+        <Table />
+      </div>
+      <div className="col-4">
+        <Suggestion />
       </div>
     </div>
   );
