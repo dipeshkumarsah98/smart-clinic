@@ -24,17 +24,16 @@ const UserDetail = ({ healthStatus }) => {
         <h3 className="flex items-center font-merienda text-rose-500">
           Health Status <i class="fa-solid fa-caret-down ml-3"></i>
         </h3>
-        {healthStatus.isHealthy ? (
+        {healthStatus?.isHealthy ? (
           <p className="text-green-600 flex items-center font-raleway  ">
-            <i class="fa-regular fa-face-smile mr-3 text-3xl"></i>Lorem ipsum
-            dolor sit amet consectetur adipisicing elit. Excepturi quisquam
-            repudiandae ipsum corporis repellendus dolores ratione. Temporibus
-            dignissimos inventore reprehenderit.S
+            <i class="fa-regular fa-face-smile mr-3 text-3xl"></i>
+            According to your overall health records, you seem perfectly fine
+            and healthy. Happy life !!
           </p>
         ) : (
           <p className="text-red-500">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero,
-            soluta!
+            According to your overall health records, there is a high chance
+            that you are prone to have a diabetes.
           </p>
         )}
       </div>
